@@ -9,4 +9,7 @@ public void setup(){
 	size(1200,700);
 	log= new Logica(this);
 }
+public void Draw(){
+	background(255);
+}
 }
