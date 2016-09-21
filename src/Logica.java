@@ -5,18 +5,21 @@ import processing.core.PImage;
 
 public class Logica {
 
-public PApplet app=Main.app;
-public PImage imagen1,imagen2,imagen3,imagen4,imagen5,imagen6,imagen7,imagen8,imagen9,imagen10;
-public PImage imagen11,imagen12,imagen13,imagen14,imagen15,imagen16,imagen17,imagen18,imagen19,imagen20;
+	public PApplet app = Main.app;
+	public PImage base;
+	public PImage imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8, imagen9, imagen10;
+	public PImage imagen11, imagen12, imagen13, imagen14, imagen15, imagen16, imagen17, imagen18, imagen19, imagen20;
+	private int contadorPantallas = 0;
+	// Un string para el tipo de archivo
 
-//Un string para el tipo de archivo
-
-public Logica(PApplet app) {
-	cargarImagenes();
-}
-
+	public Logica(PApplet app) {
+		cargarImagenes();
+		posicionMouse();
+		pantallas();
+	}
 
 private void cargarImagenes(){
+	base=app.loadImage("../data/Base-Imagen.png");
 	imagen1=app.loadImage("../data/1..jpg");
 	imagen2=app.loadImage("../data/2.jpg");
 	imagen3=app.loadImage("../data/3.jpg");
@@ -29,28 +32,47 @@ private void cargarImagenes(){
 	imagen10=app.loadImage("../data/10.jpg");
 }
 
+	private void pantallas() {
+		switch (contadorPantallas) {
+		case 0:
+			app.image(base, 0, 0);
+			break;
+		}
+	}
 
+	private void posicionMouse() {
+		if (app.mousePressed == true) {
+			if (app.mouseX > 0 && app.mouseX < 1200 && app.mouseY > 0 && app.mouseY < 700) {
+app.println(app.mouseX, app.mouseY);
+			}
+		}
 
-private void cargarLista(){
-	
-}
-private void organizarImagenes(){
-	
-}
-private  void comprobarArchivo() {
-}
+	}
 
-private void zoomIn() {
+	private void cargarLista() {
 
-}
-private void zoomOut() {
+	}
 
-}
-private void cambioDeImagenes() {
+	private void organizarImagenes() {
 
-}
-private void rotacion() {
+	}
 
+	private void comprobarArchivo() {
+	}
+
+	private void zoomIn() {
+
+	}
+
+	private void zoomOut() {
+
+	}
+
+	private void cambioDeImagenes() {
+
+	}
+
+	private void rotacion() {
+
+	}
 }
-}
- 
