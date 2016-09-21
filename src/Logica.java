@@ -14,8 +14,9 @@ public class Logica {
 
 	public Logica(PApplet app) {
 		cargarImagenes();
-		posicionMouse();
 		pantallas();
+		posicionMouse();
+
 	}
 
 private void cargarImagenes(){
@@ -43,7 +44,8 @@ private void cargarImagenes(){
 	private void posicionMouse() {
 		if (app.mousePressed == true) {
 			if (app.mouseX > 0 && app.mouseX < 1200 && app.mouseY > 0 && app.mouseY < 700) {
-app.println(app.mouseX, app.mouseY);
+System.out.println(app.mouseX);
+System.out.println(app.mouseY);
 			}
 		}
 
