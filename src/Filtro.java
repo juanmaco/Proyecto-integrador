@@ -17,7 +17,15 @@ public class Filtro {
 	//filtro para identificar la extension de las imagenes
 	static final Filenamefilter IMAGE_FILTER = new FilenameFilter(){
 		
+		public boolean accept(final File dir, final String name){
+			for(final String ext: EXTENSIONS){
+				if(name.endsWith("."+ext)){
+					return(true);
+				}
+			}
+			return(false);
+		}
 		
-		
-	}
+	
+	};
 }
